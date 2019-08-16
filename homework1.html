@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;  charset=UTF-8">
+    <title>Panel</title>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/ext-all.css" />
+    <!-- LIBS -->
+    <script type="text/javascript" src="../../adapter/ext/ext-base.js"></script>
+    <!-- ENDLIBS -->
+    <script type="text/javascript" src="../../ext-all.js"></script>
+    <script>
+        Ext.onReady(function() {
+           var container =new Ext.Container({
+               renderTo:document.body,
+               style:'position:absolute;',
+               pageX:100,
+               pageY:50,
+               layout:'table',
+               layoutConfig: {
+                   columns: 2
+               },
+               items:[{
+                   colspan: 1,
+                   xtype:'box',
+                   width:200,
+                   height:80,
+                   autoEl:{
+                       tag:'img',
+                       src:'./bing.png'
+                   }
+               },{
+                   id:'toolPanel',
+                   colspan: 1,
+                   xtype:'tabpanel',
+                   width:700,
+                   height:80,
+                   activeTab:0,
+                   items:[{
+                       id:'tab1',
+                       title: '国内版',
+                       layout:'table',
+                       layoutConfig: {
+                           columns: 2
+                       },
+                       items: [{
+                           colspan: 1,
+                           xtype:'field',
+                           width:650,
+                           height:50
+                       },{
+                           colspan: 1,
+                           xtype:'button',
+                           scale: 'large',
+                           icon:'./search.png',
+                           width:50,
+                           height:50
+                       }
+                       ]
+                   },{
+                       id:'tab2',
+                       title: '国际版',
+                       layout:'table',
+                       layoutConfig: {
+                           columns: 2
+                       },
+                       items: [{
+                           colspan: 1,
+                           xtype:'field',
+                           width:650,
+                           height:50
+                       },{
+                           colspan: 1,
+                           xtype:'button',
+                           scale: 'large',
+                           icon:'./search.png',
+                           width:50,
+                           height:50
+                       }
+                       ]
+                   }]
+               }
+               ]
+           })
+        });
+    </script>
+    <style type="text/css">
+        body {
+            background-image: url(th.jpg);
+            background-repeat: no-repeat;
+        }
+        #toolPanel ul {
+            background: transparent;
+            border: none;
+        }
+
+        #toolPanel li {
+            background: transparent;
+            border: none;
+        }
+
+        #toolPanel div {
+            background: transparent;
+            border: none;
+        }
+        #tab1 ul,li,div{
+            background: transparent;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>

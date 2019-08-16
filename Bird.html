@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/ext-all.css" />
+    <!-- LIBS -->
+    <script type="text/javascript" src="../../adapter/ext/ext-base.js"></script>
+    <!-- ENDLIBS -->
+    <script type="text/javascript" src="../../ext-all.js"></script>
+    <script>
+        Ext.onReady(function() {
+            Bird = Ext.extend(Ext.util.Observable,{
+                Constructor: function () {
+                    this.addEvents('fly','sing');
+                    Bird.superclass.constructor.call();
+                },
+                info:function (action) {
+                    return 'The bird is'+' '+action+'ing';
+                }
+            });
+            var bird =new Bird();
+            bird.on('fly',function () {
+                Ext.MessageBox.alert('FlyingBird',bird.info('fly')+'in the sky')
+            });
+            bird.on('sing',function () {
+                Ext.MessageBox.alert('FlyingBird',bird.info('sing')+'in the sky')
+            });
+            Ext.get('fly').on('click',function () {
+                bird.fireEvent('fly');
+            });
+            Ext.get('sing').on('click',function () {
+                bird.fireEvent('sing');
+            });
+        });
+    </script>
+</head>
+<body>
+<button type="button" id="fly">fly</button>
+<button type="button" id="sing">sing</button>
+</body>
+</html>

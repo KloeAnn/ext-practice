@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/ext-all.css" />
+    <!-- LIBS -->
+    <script type="text/javascript" src="../../adapter/ext/ext-base.js"></script>
+    <!-- ENDLIBS -->
+    <script type="text/javascript" src="../../ext-all.js"></script>
+    <script>
+        Ext.onReady(function() {
+            var form = new Ext.form.FormPanel({
+                id: 'testForm',
+                renderTo: document.body,
+                labelAlign: 'center',
+                title: 'form',
+                labelWidth: 60,
+                frame: true,
+                width: 300,
+                layout:'form',
+                labelAlign:'right',
+                items: [{
+                    xtype: 'datefield',
+                    msgTarget: 'under',
+                    fieldLabel: 'Birthday',
+                    allowBlank: false,
+                    emptyText: 'your birthday',
+                    format: 'Y-m-d',
+                    disabledDays: [0,6],
+                    anchor:'90%'
+                },{
+                    xtype: 'timefield',
+                    msgTarget: 'under',
+                    fieldLabel: 'lunchTime',
+                    allowBlank: false,
+                    emptyText: 'lunchTime',
+                    minValue:'11:39 AM',
+                    manValue:'11:39 PM',
+                    increment:50,
+                    anchor:'95%'
+                }]
+            });
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
